@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Timeline Manager</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="page-transition">
+    <!-- Animated Background -->
+    <div class="bg-animated">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <header class="navbar">
+        <div class="navbar-brand">
+            <h1>Timeline Manager</h1>
+        </div>
+        <nav class="navbar-menu">
+            <ul>
+                <li><a href="index.html">Timelines</a></li>
+                <li><a href="profile.html" class="active">Profile</a></li>
+                <li><a href="#" id="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="profile-container">
+            <div class="profile-header">
+                <h2>Your Profile</h2>
+            </div>
+            
+            <div class="profile-card">
+                <div class="profile-section">
+                    <h3>User Information</h3>
+                    <div class="profile-info">
+                        <p><strong>Email:</strong> <span id="user-email"></span></p>
+                        <p><strong>Account Created:</strong> <span id="account-created"></span></p>
+                    </div>
+                </div>
+                
+                <div class="profile-section">
+                    <h3>Appearance</h3>
+                    <div class="theme-toggle">
+                        <label for="theme-switch">Theme</label>
+                        <div class="switch-container">
+                            <span>Light</span>
+                            <label class="switch">
+                                <input type="checkbox" id="theme-switch">
+                                <span class="slider round"></span>
+                            </label>
+                            <span>Dark</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-section">
+                    <h3>Timeline Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h4>Total Timelines</h4>
+                            <p id="total-timelines">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Total Events</h4>
+                            <p id="total-events">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Last Updated</h4>
+                            <p id="last-updated">Never</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/auth.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

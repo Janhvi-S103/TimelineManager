@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Timeline Manager</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="page-transition">
+    <!-- Animated Background -->
+    <div class="bg-animated">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <header class="navbar">
+        <div class="navbar-brand">
+            <h1>Timeline Manager</h1>
+        </div>
+        <nav class="navbar-menu">
+            <ul>
+                <li><a href="index.html" class="active">Timelines</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#" id="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>My Timelines</h3>
+                <button id="new-timeline-btn" class="btn btn-small">New</button>
+            </div>
+            <ul id="timeline-list" class="timeline-list">
+                <!-- Timeline list populated via JavaScript -->
+            </ul>
+        </aside>
+        
+        <main class="content">
+            <div class="content-header">
+                <div class="timeline-title-container">
+                    <h2 id="current-timeline-title">Select a Timeline</h2>
+                    <button id="edit-timeline-btn" class="btn btn-small">Edit</button>
+                    <button id="delete-timeline-btn" class="btn btn-small btn-danger">Delete</button>
+                </div>
+                <button id="add-event-btn" class="btn">Add Event</button>
+            </div>
+            
+            <div id="timeline-container" class="timeline-container">
+                <!-- Timeline events populated via JavaScript -->
+                <div id="empty-state" class="empty-state">
+                    <p>Select a timeline from the sidebar or create a new one to get started</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Modal for adding/editing events -->
+    <div id="event-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Add Event</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <form id="event-form">
+                <div class="form-group">
+                    <label for="event-title">Title</label>
+                    <input type="text" id="event-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-date">Date</label>
+                    <input type="date" id="event-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-description">Description</label>
+                    <textarea id="event-description" rows="4"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary close-modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Modal for adding/editing timelines -->
+    <div id="timeline-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="timeline-modal-title">New Timeline</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <form id="timeline-form">
+                <div class="form-group">
+                    <label for="timeline-title">Title</label>
+                    <input type="text" id="timeline-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="timeline-description">Description</label>
+                    <textarea id="timeline-description" rows="4"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary close-modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Notification component -->
+    <div id="notification" class="notification" style="display: none;">
+        Timeline saved successfully!
+    </div>
+    
+    <script src="js/auth.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
